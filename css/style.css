@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.d-flex-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contenedor, .contenedor-contacto, .contenedor-gallery {
+  height: 700px;
+  padding: 30px;
+  background-color: rgb(65, 88, 42);
+}
+.contenedor h2, .contenedor-contacto h2, .contenedor-gallery h2 {
+  color: #ffffff;
+  font-size: 50px;
+  text-align: center;
+}
+.contenedor p, .contenedor-contacto p, .contenedor-gallery p {
+  color: #000000;
+}
+
+.p-1 {
+  padding: 20px;
+}
+
+.p-2 {
+  padding: 40px;
+}
+
+.p-3 {
+  padding: 60px;
+}
+
+.p-4 {
+  padding: 80px;
+}
+
+.p-5 {
+  padding: 100px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.btn-container a {
+  text-decoration: none;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.btn-primary {
+  background-color: blue;
+  transition: 0.3s;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #6666ff;
+}
+
+.btn-danger {
+  background-color: red;
+  transition: 0.3s;
+  color: #fff;
+}
+.btn-danger:hover {
+  background-color: #ff6666;
+}
+
+.btn-warning {
+  background-color: orange;
+  transition: 0.3s;
+  color: #fff;
+}
+.btn-warning:hover {
+  background-color: #ffc966;
+}
+
+.btn-dark {
+  background-color: black;
+  transition: 0.3s;
+  color: #fff;
+}
+.btn-dark:hover {
+  background-color: #333333;
+}
+
+.btn-light {
+  background-color: white;
+  transition: 0.3s;
+  color: #191919;
+}
+.btn-light:hover {
+  background-color: #cccccc;
+}
+
+.btn-success {
+  background-color: green;
+  transition: 0.3s;
+  color: #fff;
+}
+.btn-success:hover {
+  background-color: #00e600;
+}
+
+.text-primary {
+  color: blue;
+}
+
+.text-danger {
+  color: red;
+}
+
+.text-warning {
+  color: orange;
+}
+
+.text-dark {
+  color: black;
+}
+
+.text-light {
+  color: white;
+}
+
+.text-success {
+  color: green;
+}
+
+.contenedor-gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  background-color: rgb(91, 21, 21);
+}
+
+.contenedor-contacto {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+  background-color: cornflowerblue;
+}
+
+/*# sourceMappingURL=style.css.map */

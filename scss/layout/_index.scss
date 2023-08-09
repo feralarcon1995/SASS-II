@@ -1,0 +1,100 @@
+
+
+.contenedor {
+    height: 700px;
+    padding: 30px;
+
+    h2 {
+        color: #ffffff;
+        font-size: 50px;
+        text-align: center;
+    }
+    p {
+        color: #000000;
+    }
+    @if $temporada == invierno {
+        background-color: cadetblue;
+        background-image: url("../images/invierno.jpg");
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } @else if $temporada == abierto {
+        background-image: url("../images/playa.jpg");
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } @else {
+        background-color: rgb(65, 88, 42);
+    }
+}
+
+//bucle for
+
+@for $jorge from 1 through 5 {
+    .p-#{$jorge} {
+        padding: 20px * $jorge;
+    }
+}
+
+//maps
+
+
+
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    a {
+        text-decoration: none;
+        font-size: 30px;
+        padding: 10px;
+    }
+}
+//btn
+@each $key, $valor in $colors {
+    .btn-#{$key} {
+        background-color: $valor;
+        transition: 0.3s;
+
+        @if $key == light {
+            color: #191919;
+            &:hover {
+                background-color: darken($valor, 20%);
+            }
+        } @else {
+            color: #fff;
+            &:hover {
+                background-color: lighten($valor, 20%);
+            }
+        }
+    }
+}
+//text
+
+@each $key, $valor in $colors {
+    .text-#{$key} {
+        color: $valor;
+    }
+}
+
+
+.contenedor-gallery {
+    @extend .contenedor;
+    // @extend .d-flex-column;
+    // @include flex-column;
+    @include flex(column, center, center,30px);
+    flex-wrap: wrap;
+    background-color: rgb(91, 21, 21);
+}
+
+.contenedor-contacto {
+    @extend .contenedor;
+    @include flex(row, space-around, center,15px);
+    background-color: cornflowerblue;
+}
