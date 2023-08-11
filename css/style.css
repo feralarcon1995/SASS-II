@@ -153,4 +153,256 @@
   background-color: cornflowerblue;
 }
 
+.bg {
+  width: 100%;
+  height: 700px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background: linear-gradient(rgba(0, 0, 0, 0.507), rgba(0, 0, 0, 0.656)), url("../images/playa.jpg");
+  color: #fff;
+  text-align: center;
+}
+
+.cajas {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background-image: linear-gradient(125deg, rgb(230, 142, 156), rgb(118, 118, 202));
+}
+.cajas .caja {
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cajas .caja p {
+  font-size: 80px;
+}
+.cajas .c1 {
+  height: 300px;
+  transition: 0.3s all;
+}
+.cajas .c1:hover {
+  height: 400px;
+  transform: translate(-50%);
+}
+.cajas .c2 {
+  transition: 1s;
+}
+.cajas .c2:hover {
+  transform: rotateY(180deg);
+}
+.cajas .c3 {
+  transition: 0.3s;
+}
+.cajas .c3:hover {
+  transform: scale(1.1, 1.1);
+}
+.cajas .c4 {
+  transition: 0.3s;
+}
+.cajas .c4:hover {
+  transform: skewX(45deg);
+}
+
+.c5 {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  transition: 0.3s;
+  animation-name: fade;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-delay: 5s;
+}
+.c5 .image-content {
+  width: 50%;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.c5 .image-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+  filter: blur(10px);
+}
+.c5 .caja__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+}
+.c5 .caja__content p {
+  font-size: 20px;
+}
+.c5:hover .image-content img {
+  transform: scale(1.5, 1.5);
+  filter: blur(0);
+}
+
+.c6 {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  transition: 1s;
+  overflow: hidden;
+}
+.c6 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+  filter: blur(10px);
+}
+.c6 .caja__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  padding: 60px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.591);
+  transition: 1s;
+  transform: scale(0);
+  color: white;
+}
+.c6:hover img {
+  filter: blur(0);
+  transform: scale(1.5, 1.5);
+}
+.c6:hover .caja__content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.menu {
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.menu ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style-type: none;
+}
+.menu ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  color: blueviolet;
+  background-image: linear-gradient(125deg, rgb(230, 142, 156), rgb(118, 118, 202));
+  padding: 10px;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 40%;
+  transition: background-size 0.3s;
+}
+.menu ul li a:hover {
+  background-image: linear-gradient(125deg, rgb(230, 142, 156), rgb(118, 118, 202));
+  background-size: 100% 40%;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  background-color: aqua;
+  border-radius: 100%;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-delay: 0s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10%);
+  }
+  50% {
+    transform: translateX(25%);
+  }
+  75% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.carousel {
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  position: relative;
+}
+.carousel .slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  animation: carousel 15s infinite;
+}
+.carousel .slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.carousel .slide:nth-child(2) {
+  animation-delay: 5s;
+}
+.carousel .slide:nth-child(3) {
+  animation-delay: 10s;
+}
+.carousel .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes carousel {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

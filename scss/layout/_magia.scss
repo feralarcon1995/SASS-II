@@ -1,0 +1,270 @@
+.bg {
+    width: 100%;
+    height: 700px;
+    // background-color: rgb(96, 29, 29);
+    //linear gradient
+    // background-image: linear-gradient(125deg, rgb(230, 142, 156),rgb(118, 118, 202));
+    //radial gradient
+    // background-image: radial-gradient(circle, rgb(230, 142, 156),rgb(118, 118, 202));
+    padding: 30px;
+    @include flex-column;
+    gap: 30px;
+    background: linear-gradient(rgba(0, 0, 0, 0.507), rgba(0, 0, 0, 0.656)), url("../images/playa.jpg");
+    color: #fff;
+    text-align: center;
+}
+
+.cajas {
+    padding: 30px;
+    @include flex-column;
+    gap: 30px;
+    background-image: linear-gradient(125deg, rgb(230, 142, 156), rgb(118, 118, 202));
+
+    .caja {
+        width: 300px;
+        height: 300px;
+        background-color: #fff;
+        border: 2px solid blue;
+        @include flex-column;
+        p {
+            font-size: 80px;
+        }
+    }
+
+    .c1 {
+        height: 300px;
+        transition: 0.3s all;
+        &:hover {
+            height: 400px;
+            transform: translate(-50%);
+        }
+    }
+
+    .c2 {
+        transition: 1s;
+        &:hover {
+            transform: rotateY(180deg);
+        }
+    }
+
+    .c3 {
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1, 1.1);
+        }
+    }
+
+    .c4 {
+        transition: 0.3s;
+
+        &:hover {
+            transform: skewX(45deg);
+        }
+    }
+}
+
+.c5 {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    transition: 0.3s;
+    animation-name: fade;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-delay: 5s;
+
+    .image-content {
+        width: 50%;
+        transition: 0.3s;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+            filter: blur(10px);
+        }
+    }
+
+    .caja__content {
+        @include flex-column;
+        gap: 30px;
+        padding: 30px;
+        p {
+            font-size: 20px;
+        }
+    }
+
+    &:hover .image-content img {
+        transform: scale(1.5, 1.5);
+        filter: blur(0);
+    }
+}
+
+.c6 {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    transition: 1s;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.3s;
+        filter: blur(10px);
+    }
+    .caja__content {
+        @include flex-column;
+        position: absolute;
+        top: 0;
+        padding: 60px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.591);
+        // opacity: 0;
+        transition: 1s;
+        // transform: translateX(-100%);
+        transform: scale(0);
+        color: #ffff;
+    }
+
+    &:hover img {
+        filter: blur(0);
+        transform: scale(1.5, 1.5);
+    }
+
+    &:hover .caja__content {
+        opacity: 1;
+        // transform: translateX(0);
+        transform: scale(1);
+    }
+}
+
+.menu {
+    height: 800px;
+    @include flex-column;
+    gap: 30px;
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        list-style-type: none;
+        li {
+            a {
+                text-decoration: none;
+                font-size: 30px;
+                color: blueviolet;
+                background-image: linear-gradient(125deg, rgb(230, 142, 156), rgb(118, 118, 202));
+                padding: 10px;
+                background-position: 50% 100%;
+                background-repeat: no-repeat;
+                background-size: 0% 40%;
+                transition: background-size 0.3s;
+                //arranca de 0 hacia el 100 de izquierda a derecha
+                // background-image: linear-gradient(125deg, rgb(230, 142, 156),rgb(118, 118, 202));
+                // padding: 10px;
+                // background-repeat: no-repeat;
+                // background-size: 0% 100%;
+                // transition: background-size .3s;
+                &:hover {
+                    background-image: linear-gradient(125deg, rgb(230, 142, 156), rgb(118, 118, 202));
+                    background-size: 100% 40%;
+                }
+            }
+        }
+    }
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    background-color: aqua;
+    border-radius: 100%;
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(10%);
+    }
+    50% {
+        transform: translateX(25%);
+    }
+    75% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.carousel {
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+
+    .slide {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0;
+        animation: carousel 15s infinite;
+        &:nth-child(1) {
+            animation-delay: 0s;
+        }
+        &:nth-child(2){
+            animation-delay: 5s;
+        }
+        &:nth-child(3){
+            animation-delay: 10s;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@keyframes carousel {
+    0% {
+        opacity: 0;
+    }
+    8% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 1;
+
+    }
+    40% {
+        opacity: 0;
+
+    }
+}
